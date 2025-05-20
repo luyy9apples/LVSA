@@ -589,14 +589,6 @@ class KGReasoning(nn.Module):
 
         elif isinstance(model, LogicVSA):
 
-            # ### 1p ###
-            input_batch = batch_queries_dict[('e', ('r',))]
-            pos_batch = positive_sample[batch_idxs_dict[('e', ('r',))]]
-            if len(pos_batch) > 0:
-                positive_batch = torch.cat((input_batch, pos_batch.unsqueeze(1)), dim=1)
-                l_fit_1p, l_fit_rel_1p, l_a_1p, l_reg_1p = model(positive_batch, score_lhs=True, score_rel=True)
-                loss = l_fit_1p + model.w_rel_1p * l_fit_rel_1p + 0. * l_a_1p + model.w_r * l_reg_1p
-
             # ### 2p & 3p ###
             input_batch = batch_queries_dict[('e', ('r', 'r'))]
             pos_batch = positive_sample[batch_idxs_dict[('e', ('r', 'r'))]]
