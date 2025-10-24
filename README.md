@@ -1,7 +1,6 @@
 # LVSA
 Source code of the paper "From Grounding to Skolemization: A Logic-Constrained Vector Symbolic Architecture for Complex Query Answering".
 
-Our code is based on an implementation of CQD available [here](https://github.com/pminervini/KGReasoning/).
 
 
 
@@ -61,3 +60,6 @@ $ bash scripts/eval_fb15k237.sh
 $ bash scripts/eval_nell.sh
 ```
 
+## Acknowledgement
+
+Our code is based on an implementation of CQD available [here](https://github.com/pminervini/KGReasoning/).
