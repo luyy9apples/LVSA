@@ -1,5 +1,5 @@
 # LVSA
-Source code of the paper "From Grounding to Skolemization: A Logic-Constrained Vector Symbolic Architecture for Complex Query Answering".
+Source code of the paper "Existentially Consistent Skolemized Reasoning for Complex Query Answering on Knowledge Graphs".
 
 
 
