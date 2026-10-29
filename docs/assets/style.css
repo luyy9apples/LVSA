@@ -6,16 +6,18 @@
 .hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:24px}
 .hero-top .eyebrow{margin:20px 0 0}
 .conference-logo{display:block;width:104px;height:104px;object-fit:contain;flex:none;background:#fff;border-radius:8px;padding:7px;box-shadow:0 14px 38px rgba(0,0,0,.16)}
-.hero h1{max-width:940px;overflow-wrap:break-word}
+.hero h1{max-width:1000px;font-size:clamp(45px,5.6vw,75px);overflow-wrap:break-word}
+.hero-break{display:inline}
 .motivation-figure{display:block;margin-top:36px;text-decoration:none;border:1px solid var(--line);background:#fff;padding:9px;box-shadow:0 12px 34px rgba(16,40,60,.07)}
 .motivation-figure img{display:block;width:100%;height:auto}
 .motivation-figure span{display:block;color:var(--muted);font-size:11px;padding:8px 3px 1px}
 .motivation-figure:hover span{text-decoration:underline;color:var(--teal)}
-.consistency-panel{grid-column:1/-1;display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:center;margin-top:12px;padding:38px 42px;background:#fff;border-top:4px solid var(--teal);box-shadow:0 18px 48px rgba(16,40,60,.06)}
-.consistency-eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--teal);margin-bottom:12px}
-.consistency-panel h3{font-size:25px;line-height:1.3;letter-spacing:-.025em;margin-bottom:14px}
-.consistency-panel>div:first-child>p:last-child{color:var(--muted);font-size:14px;margin:0}
-.consistency-table-wrap table{background:#fff}
-.consistency-table-wrap>p{font-size:11px;color:var(--muted);line-height:1.5;margin:15px 0 0}
-@media(max-width:900px){.consistency-panel{grid-template-columns:1fr;gap:20px}.hero-top .eyebrow{margin-top:12px}}
-@media(max-width:620px){.conference-logo{width:72px;height:72px;padding:5px}.hero-top{margin-bottom:24px}.hero-top .eyebrow{font-size:10px;line-height:1.5;max-width:220px}.consistency-panel{padding:24px;gap:12px}.consistency-panel h3{font-size:21px}.motivation-figure{margin-top:28px}}
+.method .section-heading{align-items:center;gap:50px}
+.method .section-heading>div{flex:1;min-width:0}
+.method .section-heading h2{font-size:clamp(34px,3.8vw,52px)}
+.section-heading>p.method-summary{max-width:370px;border-left:3px solid var(--orange);padding-left:20px;color:var(--ink);font-weight:600;line-height:1.6}
+.results-grid{row-gap:35px}
+.results-divider{grid-column:1/-1;border-top:1px solid #c5d5d3;margin:30px 0 5px}
+.consistency-intro h2{font-size:clamp(34px,4vw,54px)}
+@media(max-width:900px){.hero-top .eyebrow{margin-top:12px}.method .section-heading{align-items:flex-start;gap:24px}.results-divider{margin:20px 0 0}}
+@media(max-width:620px){.conference-logo{width:72px;height:72px;padding:5px}.hero-top{margin-bottom:24px}.hero-top .eyebrow{font-size:10px;line-height:1.5;max-width:220px}.hero h1{font-size:clamp(39px,10vw,60px)}.hero-break{display:none}.motivation-figure{margin-top:28px}.method .section-heading h2{font-size:clamp(31px,8vw,40px)}.results-divider{margin:10px 0 0}}
