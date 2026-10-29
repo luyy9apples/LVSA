@@ -11,10 +11,11 @@
 .motivation-figure:hover span{text-decoration:underline;color:var(--teal)}
 .method .section-heading{align-items:center;gap:50px}
 .method .section-heading>div{flex:1;min-width:0}
-.method .section-heading h2{font-size:clamp(34px,3.8vw,52px)}
+.method .section-heading h2{font-size:clamp(30px,3.15vw,44px)}
+.method .section-heading h2 .method-title-line{display:block;color:var(--ink);white-space:nowrap}
 .section-heading>p.method-summary{max-width:370px;border-left:3px solid var(--orange);padding-left:20px;color:var(--ink);font-weight:600;line-height:1.6}
 .results-grid{row-gap:35px}
 .results-divider{grid-column:1/-1;border-top:1px solid #c5d5d3;margin:30px 0 5px}
 .consistency-intro h2{font-size:clamp(34px,4vw,54px)}
 @media(max-width:900px){.method .section-heading{align-items:flex-start;gap:24px}.results-divider{margin:20px 0 0}}
-@media(max-width:620px){.hero h1{font-size:clamp(39px,10vw,60px)}.hero-break{display:none}.motivation-figure{margin-top:28px}.method .section-heading h2{font-size:clamp(31px,8vw,40px)}.results-divider{margin:10px 0 0}}
+@media(max-width:620px){.hero h1{font-size:clamp(39px,10vw,60px)}.hero-break{display:none}.motivation-figure{margin-top:28px}.method .section-heading h2{font-size:clamp(31px,8vw,40px)}.method .section-heading h2 .method-title-line{white-space:normal}.results-divider{margin:10px 0 0}}

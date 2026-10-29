@@ -60,7 +60,7 @@
 
     <section class="section method" id="method" aria-labelledby="method-title">
       <div class="container">
-        <div class="section-heading"><div><p class="section-kicker">02 / The method</p><h2 id="method-title">Logic-constrained Vector<br>Symbolic Architecture</h2></div><p class="method-summary">LVSA constructs a persistent latent state for each existential variable and reuses it across its connected constraints. Inference follows the query's topological order.</p></div>
+        <div class="section-heading"><div><p class="section-kicker">02 / The method</p><h2 id="method-title"><span class="method-title-line">Logic-constrained Vector</span><span class="method-title-line">Symbolic Architecture</span></h2></div><p class="method-summary">LVSA constructs a persistent latent state for each existential variable and reuses it across its connected constraints. Inference follows the query's topological order.</p></div>
         <figure class="architecture"><img src="assets/lvsa_architecture.png" alt="Four-stage LVSA inference diagram: query setup, anchor entity embeddings, differentiable Skolemization for the existential variable, and target-variable answer scoring." loading="lazy"><figcaption>LVSA inference, from a query graph to candidate answer scores. Figure from the paper.</figcaption></figure>
         <div class="method-steps">
           <article><span class="step-number">01</span><h3>Vector-symbolic constraint encoding</h3><p>Algebraic operations represent and compose atomic relational constraints in latent space.</p></article>
