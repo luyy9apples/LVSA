@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10283c">
+  <meta name="description" content="LVSA: existentially consistent Skolemized reasoning for complex query answering on knowledge graphs. CIKM 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LVSA — Existentially Consistent Skolemized Reasoning">
+  <meta property="og:description" content="Logic-constrained vector symbolic reasoning for complex queries over incomplete knowledge graphs.">
+  <meta property="og:image" content="https://luyy9apples.github.io/LVSA/assets/lvsa_architecture.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>LVSA | CIKM 2026</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="LVSA home"><span class="brand-mark">L</span><span>LVSA</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#idea">Idea</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </nav>
+      <a class="nav-github" href="https://github.com/luyy9apples/LVSA" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CIKM 2026 · Research paper</div>
+        <h1 id="hero-title">Reasoning with <em>consistent</em> existential variables.</h1>
+        <p class="hero-subtitle">A logic-constrained vector symbolic architecture for complex query answering on incomplete knowledge graphs.</p>
+        <p class="paper-title">Existentially Consistent Skolemized Reasoning for Complex Query Answering on Knowledge Graphs</p>
+        <p class="authors">Yuyin Lu · Hegang Chen · Shanrui Xie · Yanghui Rao · Haoran Xie · Fu Lee Wang · Qing Li</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="LVSA_CIKM2026.pdf">Read paper <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="https://github.com/luyy9apples/LVSA" target="_blank" rel="noopener noreferrer">Explore code <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>Logic-constrained Vector Symbolic Architecture</span><span>Scroll to explore <span aria-hidden="true">↓</span></span></div>
+    </section>
+
+    <section class="section challenge" id="idea" aria-labelledby="idea-title">
+      <div class="container challenge-grid">
+        <div><p class="section-kicker">01 / The question</p><h2 id="idea-title">One variable.<br><span>Many constraints.</span></h2></div>
+        <div class="challenge-copy">
+          <p>In a complex knowledge graph query, an existential variable can connect several atomic constraints. Every occurrence must refer to a compatible latent witness.</p>
+          <div class="comparison" aria-label="Reasoning paradigms">
+            <div><span class="comparison-label">Grounding</span><strong>Faithful, but costly</strong><p>Enumerates candidate entities to maintain logical equivalence.</p></div>
+            <div><span class="comparison-label">Latent Skolemization</span><strong>Efficient, but vulnerable</strong><p>Can entangle shared variables in a single query representation.</p></div>
+          </div>
+          <p class="takeaway">LVSA constructs a persistent latent state for each existential variable and reuses it across its connected constraints.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">02 / The method</p><h2 id="method-title">A structured path<br>through the query.</h2></div><p>LVSA reasons in topological order, composing relational constraints while retaining the identity of each existential variable.</p></div>
+        <figure class="architecture"><img src="assets/lvsa_architecture.png" alt="Four-stage LVSA inference diagram: query setup, anchor entity embeddings, differentiable Skolemization for the existential variable, and target-variable answer scoring." loading="lazy"><figcaption>LVSA inference, from a query graph to candidate answer scores. Figure from the paper.</figcaption></figure>
+        <div class="method-steps">
+          <article><span class="step-number">01</span><h3>Bind</h3><p>Vector-symbolic operations combine entity and relation embeddings into atomic constraints.</p></article>
+          <article><span class="step-number">02</span><h3>Skolemize</h3><p>A differentiable module builds a constraint-conditioned state for each existential variable.</p></article>
+          <article><span class="step-number">03</span><h3>Preserve logic</h3><p>A logic-regularized neural negator handles hard negation and supports consistent composition.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="results" aria-labelledby="results-title">
+      <div class="container results-grid">
+        <div class="results-intro"><p class="section-kicker">03 / Evidence</p><h2 id="results-title">Stronger answers,<br><span>consistent reasoning.</span></h2><p>LVSA leads the compared Skolemization-based methods on all three standard benchmark datasets. The paper also evaluates fully unobservable queries, existential consistency, and inference efficiency.</p><p class="results-note">Average filtered MRR (%) across the evaluated query types. See the paper for the full protocol and per-query results.</p></div>
+        <div class="results-table-wrap"><table><caption>Average MRR on standard benchmark splits</caption><thead><tr><th scope="col">Dataset</th><th scope="col">LVSA</th><th scope="col">Best prior*</th></tr></thead><tbody><tr><th scope="row">FB15k</th><td>48.4</td><td>41.8</td></tr><tr><th scope="row">FB15k-237</th><td>22.4</td><td>19.4</td></tr><tr><th scope="row">NELL995</th><td>24.1</td><td>22.6</td></tr></tbody></table><p>* Best Skolemization-based baseline in the paper's comparison, using the same benchmark protocol.</p></div>
+      </div>
+    </section>
+
+    <section class="section citation" id="citation" aria-labelledby="citation-title">
+      <div class="container citation-grid"><div><p class="section-kicker">04 / Use this work</p><h2 id="citation-title">Read. Reproduce. Cite.</h2><p>The repository contains the LVSA implementation, training and evaluation scripts, and reproduction instructions.</p><div class="citation-links"><a href="LVSA_CIKM2026.pdf">Paper PDF <span aria-hidden="true">↗</span></a><a href="https://github.com/luyy9apples/LVSA" target="_blank" rel="noopener noreferrer">Code &amp; setup <span aria-hidden="true">↗</span></a></div></div><div class="bib-card"><div class="bib-top"><span>BibTeX</span><button id="copy-citation" type="button" aria-label="Copy BibTeX citation">Copy citation</button></div><pre id="bibtex" tabindex="0">@inproceedings{lu2026existentially,
+  title     = {Existentially Consistent Skolemized Reasoning for Complex Query Answering on Knowledge Graphs},
+  author    = {Lu, Yuyin and Chen, Hegang and Xie, Shanrui and Rao, Yanghui and Xie, Haoran and Wang, Fu Lee and Li, Qing},
+  booktitle = {Proceedings of the 35th ACM International Conference on Information and Knowledge Management},
+  year      = {2026}
+}</pre></div></div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>LVSA · CIKM 2026</span><span>Complex Query Answering on Knowledge Graphs</span><a href="#top">Back to top ↑</a></div></footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
